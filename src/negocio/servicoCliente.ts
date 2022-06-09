@@ -7,6 +7,8 @@ import Produto from "../modelo/produto";
 
 
 export default class ServicosCliente extends Cadastro{
-    
+    public cadastrar(): void {
+        
+    }
 
 }
