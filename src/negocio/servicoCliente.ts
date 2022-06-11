@@ -26,10 +26,10 @@ export default class ServicosCliente extends Cadastro{
         console.log(this.clienteSelecionado?.nome);
         let listagemProdutos = new ListagemServico(this.empresa.getServicos)
         listagemProdutos.listar()
-        const idProduto = this.entrada.receberTexto('Informe o Nome do Serviço:  ')
-        this.servicoSelecionado = this.empresa.getServicos.find(servico => servico.getNomeServiço === idProduto)
+        const nomeServico = this.entrada.receberTexto('Informe o Nome do Serviço:  ')
+        this.servicoSelecionado = this.empresa.getServicos.find(servico => servico.getNomeServiço === nomeServico)
         console.log(this.servicoSelecionado?.getNomeServiço);
-        
+        this.clienteSelecionado?.addServicos(this.servicoSelecionado)
     }
     public cadastrar(): void {
         

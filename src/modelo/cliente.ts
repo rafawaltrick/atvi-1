@@ -41,4 +41,14 @@ export default class Cliente {
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
     }
+    public addServicos(servico?: Servico): void{
+        if(!servico){
+            console.log("Serviço Não Encotrado!");
+            
+        }
+        else{
+            this.servicosConsumidos.push(servico)
+        }
+        
+    }
 }
