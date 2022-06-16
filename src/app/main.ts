@@ -10,7 +10,9 @@ import ListagemClientes from "../negocio/listagemClientes";
 import listagemProduto from "../negocio/listagemProduto";
 import ListagemServico from "../negocio/listagemServico";
 import ListagemServicoCliente from "../negocio/listarServicoCliente";
-import ServicosCliente from "../negocio/servicoCliente";
+import ConsumoCliente from "../negocio/consumoCliente";
+import DeletaCliente from "../negocio/deletaCliente";
+import DeletaServico from "../negocio/deleteServico";
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -19,8 +21,10 @@ let execucao = true
 
 let cliente = new Cliente("Rafael", "Nome Social", new CPF("1", new Date()))
     let servico = new Servico("Hidratação", 1, "Descrição do Serviço")
+    let servico2 = new Servico("Depilação", 2, "Descrição do Serviço")
     empresa.getClientes.push(cliente)
     empresa.getServicos.push(servico)
+    empresa.getServicos.push(servico2)
 
 while (execucao) {
     console.log(`Opções:`);
@@ -32,6 +36,8 @@ while (execucao) {
     console.log(`6 - Listar todos os serviços:`);
     console.log(`7 - Serviços Contratados: `);
     console.log(`8 - Listar Serviços do Cliente: `);
+    console.log(`9 - Excluir Cliente: `);
+    console.log(`10 - Excluir Serviço: `);    
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -63,13 +69,21 @@ while (execucao) {
             listagemServico.listar()
             break;
         case 7:
-            let servicoCliente = new ServicosCliente(empresa)
-            servicoCliente.selecionarCliente();
+            let consumoCliente = new ConsumoCliente(empresa)
+            consumoCliente.cadastrar();
             break;
         case 8:
             let listarServicoCliente = new ListagemServicoCliente(empresa.getClientes)
             listarServicoCliente.listar();
             break;
+        case 9:
+            let deletaCliente = new DeletaCliente(empresa.getClientes)
+            deletaCliente.deletar();
+            break;
+        case 10:
+            let deletaServico = new DeletaServico(empresa.getServicos)
+            deletaServico.deletar();
+            break
         case 0:
             execucao = false
             console.log(`Até mais`)

@@ -48,6 +48,20 @@ export default class Cliente {
         }
         else{
             this.servicosConsumidos.push(servico)
+            console.log('Serviço Adicionado!');
+            
+        }
+        
+    }
+    public addProduto(produto?: Produto): void{
+        if(!produto){
+            console.log("Produto Não Encontrado!");
+            
+        }
+        else{
+            this.produtosConsumidos.push(produto)
+            console.log("Produto Adicionado!");
+            
         }
         
     }
