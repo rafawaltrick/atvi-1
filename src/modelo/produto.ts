@@ -3,7 +3,7 @@ export default class Produto {
     public preco!:number
     public descricao!:string
     public categoria!:string
-    private quantidade!:number
+    public quantidade!:number
     private ProdutoID!:number
     constructor(ProdutoID:number,nome:string, preco:number, 
         descricao:string, categoria:string, quantidade:number){

@@ -13,6 +13,11 @@ import ListagemServicoCliente from "../negocio/listarServicoCliente";
 import ConsumoCliente from "../negocio/consumoCliente";
 import DeletaCliente from "../negocio/deletaCliente";
 import DeletaServico from "../negocio/deleteServico";
+import EditarCliente from "../negocio/editarCliente";
+import EditarServico from "../negocio/editarServico";
+import EditaProduto from "../negocio/editaProduto";
+import Produto from "../modelo/produto";
+
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -20,11 +25,13 @@ let empresa = new Empresa()
 let execucao = true
 
 let cliente = new Cliente("Rafael", "Nome Social", new CPF("1", new Date()))
-    let servico = new Servico("Hidratação", 1, "Descrição do Serviço")
-    let servico2 = new Servico("Depilação", 2, "Descrição do Serviço")
+let servico = new Servico("Hidratação", 1, "Descrição do Serviço")
+let servico2 = new Servico("Depilação", 2, "Descrição do Serviço")
+let produto = new Produto(1, "Esmalte", 32, "Descrição do Produto", "Categoria", 13)
     empresa.getClientes.push(cliente)
     empresa.getServicos.push(servico)
     empresa.getServicos.push(servico2)
+    empresa.getProdutos.push(produto)
 
 while (execucao) {
     console.log(`Opções:`);
@@ -37,7 +44,10 @@ while (execucao) {
     console.log(`7 - Serviços Contratados: `);
     console.log(`8 - Listar Serviços do Cliente: `);
     console.log(`9 - Excluir Cliente: `);
-    console.log(`10 - Excluir Serviço: `);    
+    console.log(`10 - Excluir Serviço: `); 
+    console.log(`11 - Editar Dados do Cliente: `);
+    console.log(`12 - Editar Serviços: `);  
+    console.log(`13 - Editar Produtos: `);     
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -83,7 +93,19 @@ while (execucao) {
         case 10:
             let deletaServico = new DeletaServico(empresa.getServicos)
             deletaServico.deletar();
-            break
+            break;
+        case 11:
+            let editarCliente = new EditarCliente(empresa.getClientes)
+            editarCliente.editar();
+            break;
+        case 12: 
+            let editarServico = new EditarServico(empresa.getServicos)
+            editarServico.editar();
+            break;
+        case 13:
+            let editaProduto = new EditaProduto(empresa.getProdutos)
+            editaProduto.editar();
+            break;
         case 0:
             execucao = false
             console.log(`Até mais`)

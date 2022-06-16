@@ -65,4 +65,8 @@ export default class Cliente {
         }
         
     }
+    public addTelefone(ddd: string, telefone: string): void{
+        const novoTelefone = new Telefone(ddd, telefone)
+            this.telefones.push(novoTelefone)
+    }
 }
