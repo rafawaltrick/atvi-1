@@ -3,19 +3,19 @@ import Cliente from "../modelo/cliente";
 import CPF from "../modelo/cpf";
 import Empresa from "../modelo/empresa"
 import Servico from "../modelo/servico";
-import CadastroCliente from "../negocio/cadastroCliente";
-import CadastroProduto from "../negocio/cadastroProduto";
-import CadastroServico from "../negocio/cadastroServico";
-import ListagemClientes from "../negocio/listagemClientes";
-import listagemProduto from "../negocio/listagemProduto";
-import ListagemServico from "../negocio/listagemServico";
-import ListagemServicoCliente from "../negocio/listarServicoCliente";
-import ConsumoCliente from "../negocio/consumoCliente";
-import DeletaCliente from "../negocio/deletaCliente";
-import DeletaServico from "../negocio/deleteServico";
-import EditarCliente from "../negocio/editarCliente";
-import EditarServico from "../negocio/editarServico";
-import EditaProduto from "../negocio/editaProduto";
+import CadastroCliente from "../negocio/Cliente/cadastroCliente";
+import CadastroProduto from "../negocio/Produto/cadastroProduto";
+import CadastroServico from "../negocio/Servico/cadastroServico";
+import ListagemClientes from "../negocio/Cliente/listagemClientes";
+import listagemProduto from "../negocio/Produto/listagemProduto";
+import ListagemServico from "../negocio/Servico/listagemServico";
+import ListagemServicoCliente from "../negocio/Consumo/listarServicoCliente";
+import ConsumoCliente from "../negocio/Consumo/consumoCliente";
+import DeletaCliente from "../negocio/Cliente/deletaCliente";
+import DeletaServico from "../negocio/Servico/deleteServico";
+import EditarCliente from "../negocio/Cliente/editarCliente";
+import EditarServico from "../negocio/Servico/editarServico";
+import EditaProduto from "../negocio/Produto/editaProduto";
 import Produto from "../modelo/produto";
 
 
@@ -24,7 +24,7 @@ console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
 let empresa = new Empresa()
 let execucao = true
 
-let cliente = new Cliente("Rafael", "Nome Social", new CPF("1", new Date()))
+let cliente = new Cliente("Rafael", "Nome Social", new CPF("1", new Date()), "Genero")
 let servico = new Servico("Hidratação", 1, "Descrição do Serviço")
 let servico2 = new Servico("Depilação", 2, "Descrição do Serviço")
 let produto = new Produto(1, "Esmalte", 32, "Descrição do Produto", "Categoria", 13)

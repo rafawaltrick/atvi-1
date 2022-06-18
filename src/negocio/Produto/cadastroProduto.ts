@@ -1,7 +1,7 @@
-import Cliente from "../modelo/cliente";
-import Produto from "../modelo/produto";
-import Cadastro from "./cadastro";
-import Entrada from "../io/entrada";
+import Cliente from "../../modelo/cliente";
+import Produto from "../../modelo/produto";
+import Cadastro from "../cadastro";
+import Entrada from "../../io/entrada";
 
 
 export default class CadastroProduto extends Cadastro {

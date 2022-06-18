@@ -1,6 +1,6 @@
-import Entrada from "../io/entrada"
-import Cliente from "../modelo/cliente"
-import Editar from "./editar"
+import Entrada from "../../io/entrada"
+import Cliente from "../../modelo/cliente"
+import Editar from "../editar"
 
 export default class EditarCliente extends Editar {
     private clientes: Cliente[]

@@ -1,6 +1,6 @@
-import Cliente from "../modelo/cliente";
-import Listagem from "./listagem";
-import Produto from "../modelo/produto";
+import Cliente from "../../modelo/cliente";
+import Listagem from "../listagem";
+import Produto from "../../modelo/produto";
 
 export default class listagemProduto extends Listagem{
     private produto: Array<Produto>

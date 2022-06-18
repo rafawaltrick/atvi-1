@@ -1,6 +1,6 @@
-import Entrada from "../io/entrada";
-import Produto from "../modelo/produto";
-import Editar from "./editar";
+import Entrada from "../../io/entrada";
+import Produto from "../../modelo/produto";
+import Editar from "../editar";
 
 export default class EditaProduto extends Editar{
     private produtos: Produto[]

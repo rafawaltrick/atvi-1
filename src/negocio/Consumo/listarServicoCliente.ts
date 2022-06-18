@@ -1,7 +1,7 @@
-import Entrada from "../io/entrada";
-import Cliente from "../modelo/cliente";
-import Servico from "../modelo/servico";
-import Listagem from "./listagem";
+import Entrada from "../../io/entrada";
+import Cliente from "../../modelo/cliente";
+import Servico from "../../modelo/servico";
+import Listagem from "../listagem";
 
 export default class ListagemServicoCliente extends Listagem{
     public clientes: Array<Cliente>;

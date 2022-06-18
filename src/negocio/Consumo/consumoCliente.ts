@@ -1,11 +1,11 @@
-import Cadastro from "./cadastro";
-import Cliente from "../modelo/cliente";
-import Servico from "../modelo/servico";
-import Empresa from "../modelo/empresa";
-import Produto from "../modelo/produto";
-import Entrada from "../io/entrada";
-import listagemProduto from "./listagemProduto";
-import ListagemServico from "./listagemServico";
+import Cadastro from "../cadastro";
+import Cliente from "../../modelo/cliente";
+import Servico from "../../modelo/servico";
+import Empresa from "../../modelo/empresa";
+import Produto from "../../modelo/produto";
+import Entrada from "../../io/entrada";
+import listagemProduto from "../Produto/listagemProduto";
+import ListagemServico from "../Servico/listagemServico";
 
 
 

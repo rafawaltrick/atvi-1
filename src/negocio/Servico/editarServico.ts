@@ -1,6 +1,6 @@
-import Entrada from "../io/entrada";
-import Servico from "../modelo/servico";
-import Editar from "./editar";
+import Entrada from "../../io/entrada";
+import Servico from "../../modelo/servico";
+import Editar from "../editar";
 
 export default class EditarServico extends Editar{
     private servicos: Servico[]
