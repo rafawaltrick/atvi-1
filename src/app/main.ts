@@ -17,6 +17,7 @@ import EditarCliente from "../negocio/Cliente/editarCliente";
 import EditarServico from "../negocio/Servico/editarServico";
 import EditaProduto from "../negocio/Produto/editaProduto";
 import Produto from "../modelo/produto";
+import listagemGenero from "../negocio/Listagem/listarGenero";
 
 
 
@@ -24,11 +25,13 @@ console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
 let empresa = new Empresa()
 let execucao = true
 
-let cliente = new Cliente("Rafael", "Nome Social", new CPF("1", new Date()), "Genero")
+let cliente = new Cliente("Rafael", "Nome Social", new CPF("1", new Date()), "M")
+let cliente1 = new Cliente("Vanessa", "Nome Social", new CPF("2", new Date()), "F")
 let servico = new Servico("Hidratação", 1, "Descrição do Serviço")
 let servico2 = new Servico("Depilação", 2, "Descrição do Serviço")
 let produto = new Produto(1, "Esmalte", 32, "Descrição do Produto", "Categoria", 13)
     empresa.getClientes.push(cliente)
+    empresa.getClientes.push(cliente1)
     empresa.getServicos.push(servico)
     empresa.getServicos.push(servico2)
     empresa.getProdutos.push(produto)
@@ -47,7 +50,8 @@ while (execucao) {
     console.log(`10 - Excluir Serviço: `); 
     console.log(`11 - Editar Dados do Cliente: `);
     console.log(`12 - Editar Serviços: `);  
-    console.log(`13 - Editar Produtos: `);     
+    console.log(`13 - Editar Produtos: `);  
+    console.log(`14 - Listar Genero: `);   
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -105,6 +109,10 @@ while (execucao) {
         case 13:
             let editaProduto = new EditaProduto(empresa.getProdutos)
             editaProduto.editar();
+            break;
+        case 14:
+            let listarGenero = new listagemGenero(empresa.getClientes)
+            listarGenero.listar();
             break;
         case 0:
             execucao = false
