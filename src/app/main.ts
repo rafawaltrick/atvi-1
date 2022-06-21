@@ -160,6 +160,8 @@ while (execucao) {
     console.log(`15 - Listar os 10 Clientes Que Mais Consumiram: `)  
     console.log(`16 - Lista Geral de Maior Consumo: `) 
     console.log(`17 - Lista de Consumo Por Gênero: `)
+    console.log(`18 - Listar os 10 Clientes Que Menos Consumiram: `)
+    console.log(`19 - Listar os 5 Clientes que Mais Gastaram: `)
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -233,6 +235,14 @@ while (execucao) {
         case 17:
             let listagemConsumoGenero = new ListarConsumo(empresa.getClientes)
             listagemConsumoGenero.listagemConsumoGenero();
+            break;
+        case 18:
+            let listarMenorConsumo = new ListarConsumo(empresa.getClientes)
+            listarMenorConsumo.listar10Menos();
+            break;
+        case 19:
+            let listar5ClientesValor = new ListarConsumo(empresa.getClientes)
+            listar5ClientesValor.cincoMaisValor();
             break;
         case 0:
             execucao = false

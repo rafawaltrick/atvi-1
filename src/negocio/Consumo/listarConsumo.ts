@@ -88,4 +88,31 @@ export default class ListarConsumo{
         console.log("Não Informado: ",naoInformado)
         
     }
+
+    public listar10Menos(): void {
+        const clientes = this.clientes.sort((a, b)=> {
+            const produtosA = a.getProdutosConsumidos.length
+            const servicosA = a.getServicosConsumidos.length
+            const produtosB = b.getProdutosConsumidos.length
+            const servicosB = b.getServicosConsumidos.length
+            return (produtosA + servicosA) - (produtosB + servicosB)
+        })
+        console.log(clientes.slice(0,10))
+        
+    }
+
+    public cincoMaisValor(): void{
+        const clientes = this.clientes.map(c => {
+            let valorTotal = 0
+            c.getProdutosConsumidos.forEach(p => {
+                valorTotal += p.getPreco
+            })
+            c.getServicosConsumidos.forEach(s => {
+                valorTotal += s.getPrecoServiço
+            })
+            return{...c, valorTotal}
+        })
+        const ordenados = clientes.sort((a, b)=> b.valorTotal - a.valorTotal)
+        console.log(ordenados.slice(0,5))
+    }
 }    
