@@ -17,7 +17,7 @@ export default class CadastroCliente extends Cadastro {
         console.log(`\nInício do cadastro do cliente`);
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `);
         let nomeSocial = this.entrada.receberTexto(`Por favor informe o nome social do cliente: `);
-        let genero = this.entrada.receberTexto(`Por Favor Informe seu Genero, (M) para Masculino e (F) para Feminino: `);
+        let genero = this.entrada.receberTexto(`Por Favor Informe seu Genero, (M) para Masculino, (F) para Feminino e (NI) Para Não Informado: `);
         let valor = this.entrada.receberTexto(`Por favor informe o número do cpf: `);
         let data = this.entrada.receberTexto(`Por favor informe a data de emissão do cpf, no padrão dd/mm/yyyy: `);
         let valorRg = this.entrada.receberTexto(`Por favor informe o número do rg: `);
